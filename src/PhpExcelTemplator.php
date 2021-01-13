@@ -56,13 +56,13 @@ class PhpExcelTemplator
 		static::saveSpreadsheetToFile($spreadsheet, $outputFile, $events);
 	}
 	/**
-	 * @param int Total Sheets
+	 * @param int Total Sheets in xlsx file
      * @param string $templateFile Path to *.xlsx template file
      * @param string $outputFile Exported file path
      * @param ExcelParam[] | array $params Parameters of the setter
      * @param array $callbacks An associative array of callbacks to change cell styles without using setters
      * @param callable[] $events Events, applied for additional manipulations with the spreadsheet and the writer
-     * @throws \PhpOffice\PhpSpreadsheet\Exception
+     * @throws \PhpOffice\PhpSpreadsheet\Exception 
      */
 	public static function saveToFileWithMultipleSheets($sheetsCount = 1, $templateFile, $outputFile, $params, $callbacks=[], $events=[]): void
 	{
