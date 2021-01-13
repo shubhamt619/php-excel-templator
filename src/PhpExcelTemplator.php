@@ -69,7 +69,7 @@ class PhpExcelTemplator
 		//Function to be edited
 		$spreadsheet = static::getSpreadsheet($templateFile);
 		for ($i = 1; $i <= $sheetsCount ; $i++) {
-			$sheet = $spreadsheet->getActiveSheet();
+			$sheet = $spreadsheet->getSheet($i);
 			$templateVarsArr = $sheet->toArray();
 			static::renderWorksheet($sheet, $templateVarsArr, $params, $callbacks, $events);
 		}
@@ -187,7 +187,6 @@ class PhpExcelTemplator
     {
         return IOFactory::createWriter($spreadsheet, 'Xlsx');
     }
-
 	/**
 	 * Sets the header parameters needed to download the excel file.
 	 * @param string $fileName
