@@ -68,7 +68,7 @@ class PhpExcelTemplator
 	{
 		//Function to be edited
 		$spreadsheet = static::getSpreadsheet($templateFile);
-		for ($i = 1; $i <= $sheetsCount ; $i++) {
+		for ($i = 0; $i < $sheetsCount ; $i++) {
 			$sheet = $spreadsheet->getSheet($i);
 			$templateVarsArr = $sheet->toArray();
 			static::renderWorksheet($sheet, $templateVarsArr, $params, $callbacks, $events);
